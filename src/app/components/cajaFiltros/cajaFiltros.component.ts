@@ -6,5 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cajaFiltros.component.css']
 })
 export class CajaFiltros{
+  public abiertoFiltroNombre: boolean = true;
+  public abiertoFiltroEstrella: boolean = true;
 
+  toggleAbiertoFiltroNombre() {
+    this.abiertoFiltroNombre = !this.abiertoFiltroNombre;
+  }
+
+  toggleAbiertoFiltroEstrella() {
+    this.abiertoFiltroEstrella = !this.abiertoFiltroEstrella;
+  }
 }

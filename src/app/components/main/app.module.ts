@@ -25,7 +25,7 @@ import { CollapsibleModule } from 'angular2-collapsible';
     BrowserModule,
     HttpClientModule,
     AngularSvgIconModule,
-    BrowserAnimationsModule, 
+    BrowserAnimationsModule,
     CollapsibleModule
   ],
   providers: [

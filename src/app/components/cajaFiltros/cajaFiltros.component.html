@@ -1,23 +1,78 @@
-<ul>
-  <li>
-      <div class="col l12 white encabezado filtros valign-wrapper">
-        <b>Filtros</b>
-      </div>
-  </li>
-</ul>
 <collapsible-list [type]="'expandable'">
   <collapsible-list-item class="filtros">
-    <collapsible-header>
-      <svg-icon src="/assets/icons/filters/search.svg" class="icon-search"></svg-icon>
-      Nombre del Hotel
+    <collapsible-header class="separar-seccion">
+      <b>Filtros</b>
     </collapsible-header>
-    <collapsible-body [expanded]="true">
-        <div class="col s6">
-          <input placeholder="Ingrese el nombre del hotel"/>
+  </collapsible-list-item>
+  <collapsible-list-item class="filtros">
+    <collapsible-header class="light-blue-text text-darken-1" (click)="toggleAbiertoFiltroNombre()">
+      <div class="col s11">
+        <svg-icon src="/assets/icons/filters/search.svg" class="icon-collapsible-header"></svg-icon>
+        <b>Nombre del Hotel</b>
+      </div>
+      <div class="right-align col s1">
+        <i class="caret rotate" [class.open]="abiertoFiltroNombre"></i>
+      </div>
+    </collapsible-header>
+    <collapsible-body class="white estirar-al-contenido separar-seccion sin-sombra" [expanded]="true">
+        <div class="col s8">
+          <input class="no-material" placeholder="Ingrese el nombre del hotel"/>
         </div>
-        <div class="col s6">
-      <a class="btn">Aceptar</a>
+        <div class="col s4">
+          <a class="btn indigo darken-4 no-mayusculas">Aceptar</a>
         </div>
+    </collapsible-body>
+  </collapsible-list-item>
+
+  <collapsible-list-item class="filtros">
+    <collapsible-header class="light-blue-text text-darken-1" (click)="toggleAbiertoFiltroEstrella()">
+      <div class="col s11">
+        <svg-icon src="/assets/icons/filters/star.svg" class="icon-collapsible-header"></svg-icon>
+        <b>Estrellas</b>
+      </div>
+      <div class="right-align col s1">
+        <i class="caret rotate" [class.open]="abiertoFiltroEstrella"></i>
+      </div>
+    </collapsible-header>
+    <collapsible-body class="white estirar-al-contenido sin-sombra" [expanded]="true">
+      <div class="col s12 filtros">
+          <label class="black-text valign-wrapper">
+          <input type="checkbox"/>
+        <span>
+          <b>Todas las estrellas</b>
+        </span>
+        </label>
+      </div>
+      <div class="col s12 filtros">
+        <label>
+        <input type="checkbox"/>
+        <star-meter  [cantidadEstrellas]=5></star-meter>
+      </label>
+      </div>
+      <div class="col s12 filtros">
+        <label>
+        <input type="checkbox"/>
+        <star-meter  [cantidadEstrellas]=4></star-meter>
+      </label>
+      </div>
+      <div class="col s12 filtros">
+        <label>
+        <input type="checkbox"/>
+        <star-meter  [cantidadEstrellas]=3></star-meter>
+      </label>
+      </div>
+      <div class="col s12 filtros">
+        <label>
+        <input type="checkbox"/>
+        <star-meter  [cantidadEstrellas]=2></star-meter>
+      </label>
+      </div>
+      <div class="col s12 filtros">
+        <label>
+        <input type="checkbox"/>
+        <star-meter  [cantidadEstrellas]=1></star-meter>
+      </label>
+      </div>
     </collapsible-body>
   </collapsible-list-item>
 </collapsible-list>
