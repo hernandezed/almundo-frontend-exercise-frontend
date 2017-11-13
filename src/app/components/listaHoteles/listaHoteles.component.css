@@ -1,0 +1,58 @@
+@media (min-width: 992px) {
+  .row-lista-hoteles {
+    display: flex;
+  }
+  .wrapper-imagenes{
+    overflow: hidden;
+    height: 207px;
+  }
+  .borde-izquierdo-l{
+    border-left-style: dashed;
+    border-left-color: #9e9e9e94;
+    border-width: 2px;
+  }
+  .wrapper-imagenes img{
+    height: 100%;
+    width: 100%;
+  }
+  .contenedor-imagen {
+    padding-bottom:10px;
+    padding-left: 0px;
+  }
+}
+.hotel-card {
+    background-color: white;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.1);
+    margin: 10px;
+    padding-left: 0px;
+    padding-top:5px;
+}
+@media (max-width: 991px) {
+  .borde-superior-s{
+    border-top-style: dashed;
+    border-top-color: #9e9e9e94;
+    border-width: 2px;
+  }
+  .wrapper-imagenes img{
+    height: 100%;
+    width: 100%;
+  }
+  .contenedor-imagen {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .row-lista-hoteles div div{
+    padding-left: 0px;
+  }
+  .row-lista-hoteles div div.contenedor-amenities{
+      padding-bottom: 10px;
+  }
+
+}
+.hotel-card {
+    background-color: white;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.1);
+    margin: 10px;
+    padding-left: 0px;
+    padding-top:5px;
+}

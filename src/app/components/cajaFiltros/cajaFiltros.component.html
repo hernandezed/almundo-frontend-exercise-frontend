@@ -1,0 +1,23 @@
+<ul>
+  <li>
+      <div class="col l12 white encabezado filtros valign-wrapper">
+        <b>Filtros</b>
+      </div>
+  </li>
+</ul>
+<collapsible-list [type]="'expandable'">
+  <collapsible-list-item class="filtros">
+    <collapsible-header>
+      <svg-icon src="/assets/icons/filters/search.svg" class="icon-search"></svg-icon>
+      Nombre del Hotel
+    </collapsible-header>
+    <collapsible-body [expanded]="true">
+        <div class="col s6">
+          <input placeholder="Ingrese el nombre del hotel"/>
+        </div>
+        <div class="col s6">
+      <a class="btn">Aceptar</a>
+        </div>
+    </collapsible-body>
+  </collapsible-list-item>
+</collapsible-list>

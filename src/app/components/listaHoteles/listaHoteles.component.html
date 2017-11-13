@@ -1,0 +1,28 @@
+<ul>
+   <li *ngFor="let hotel of hoteles" class="hotel-card">
+     <div class="row row-lista-hoteles">
+      <div class="col s12 l10">
+        <div class="col l3 s12 contenedor-imagen">
+          <div class="wrapper-imagenes">
+            <img class="responsive-img hotel-img" src="/assets/images/hotels/{{hotel.image}}" onerror='this.src="https://static.almundo.com/img/almundo-iso.png"'>
+          </div>
+        </div>
+        <div class="col l7 s12">
+
+          <div class="col s12">
+                <a><b>{{hotel.name}}</b></a>
+          </div>
+          <div class="col s12">
+              <star-meter [cantidadEstrellas]="hotel.stars"></star-meter>
+          </div>
+          <div class="col s12 contenedor-amenities">
+              <caja-amenities [amenitiesList]="hotel.amenities"></caja-amenities>
+          </div>
+        </div>
+      </div>
+      <div class="col l2 s12 valign-wrapper borde-izquierdo-l borde-superior-s">
+        <caja-precio [precio]="hotel.price"></caja-precio>
+      </div>
+      </div>
+   </li>
+ </ul>

@@ -1,0 +1,20 @@
+.filtros.encabezado{
+  height: 40px;
+}
+
+.filtros{
+  margin-bottom: 5px;
+}
+
+.icon-search {
+  width: 15px;
+  fill: #0D47A1;
+}
+
+collapsible-body{
+  border:0px;
+}
+
+collapsible-list {
+  border:0px;
+}

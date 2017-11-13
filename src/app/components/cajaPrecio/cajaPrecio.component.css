@@ -1,0 +1,18 @@
+.contenedor-precio {
+  font-size: 18px;
+  text-align: center;
+}
+
+.contenedor-precio b{
+  font-size: 24px;
+}
+
+.tipo-precio {
+  padding-top: 12px;
+  font-size: 10px;
+  text-align: center;
+}
+
+.no-mayusculas {
+     text-transform: none;
+}
