@@ -1,10 +1,20 @@
-.contenedor-precio {
-  font-size: 18px;
-  text-align: center;
+@media (min-width: 992px) {
+  .contenedor-precio {
+    font-size: 1vw;
+    text-align: center;
+  }
+  .contenedor-precio b{
+    font-size: 1.5vw;
+  }
 }
-
-.contenedor-precio b{
-  font-size: 24px;
+@media (max-width: 992px) {
+  .contenedor-precio {
+    font-size: 18px;
+    text-align: center;
+  }
+  .contenedor-precio b{
+    font-size: 24px;
+  }
 }
 
 .tipo-precio {
