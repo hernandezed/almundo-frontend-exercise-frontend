@@ -1,33 +1,35 @@
 import { Injectable } from '@angular/core';
 import { Http} from '@angular/http';
 import 'rxjs/add/operator/map';
-import {Observable } from 'rxjs/Rx'
+import {Observable } from 'rxjs/Observable';
+
 @Injectable()
 export class HotelService {
-  private baseUrl: string = "http://localhost:8080"
-  constructor(private http : Http) {
+  private baseUrl = 'http://localhost:8080';
+
+  constructor(private http: Http) {
   }
 
-  getAll() {
-    return this.http.get(this.baseUrl+ '/hoteles')
-    .map(this.mapHotels.bind(this));
+  public obtenerTodos() {
+    return this.http.get(this.baseUrl + '/hoteles')
+    .map(res => res.json());
   }
 
-  toHotel(r:any) {
-    let hotel = {
-      id: r.id,
-      name: r.name,
-      stars: r.stars,
-      price: r.price,
-      image: r.image,
-      amenities: r.amenities
-    };
-    return hotel;
+  public buscar(nombre: string, estrellas: Set<number>) {
+    return this.http.get(this.baseUrl + '/hoteles?' + this.armarFiltros(nombre,estrellas));
   }
 
-  mapHotels(response:any){
-     return response.json();
+  private armarFiltros(nombre:string, estrellas: Set<number>) {
+    let filtroNombre = 'nombre=';
+    let filtroEstrellas = 'estrellas=';
+    let filtros= '';
+    if(nombre!='') {
+      filtros = filtros.concat(filtroNombre).concat(nombre).concat("&");
+    }
+    estrellas.forEach(estrella => {
+      filtros = filtros.concat(filtroEstrellas).concat(estrella);
+    });
+    return filtros;
   }
-
 
 }

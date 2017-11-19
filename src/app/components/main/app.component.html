@@ -9,10 +9,10 @@
 <div class="fluid-container">
   <div class="row">
     <div class="col l3 s12">
-      <caja-filtros></caja-filtros>
+      <app-caja-filtros (hotelesFiltrados)="hoteles= $event"></app-caja-filtros>
     </div>
     <div class="col l9 s12">
-      <lista-hoteles></lista-hoteles>
+      <app-lista-hoteles [(hoteles)]="hoteles"></app-lista-hoteles>
     </div>
   </div>
 </div>

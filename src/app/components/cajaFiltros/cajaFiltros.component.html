@@ -16,10 +16,10 @@
     </collapsible-header>
     <collapsible-body class="white estirar-al-contenido separar-seccion sin-sombra" [expanded]="true">
         <div class="col l6 m10 s6 xl7">
-          <input class="no-material" placeholder="Ingrese el nombre del hotel"/>
+          <input class="no-material" placeholder="Ingrese el nombre del hotel" [(ngModel)]="nombreBuscado"/>
         </div>
         <div class="col l6 m2 s6 xl5">
-          <a class="btn indigo darken-4 no-mayusculas">Aceptar</a>
+          <a class="btn indigo darken-4 no-mayusculas" (click)="buscar()">Aceptar</a>
         </div>
     </collapsible-body>
   </collapsible-list-item>
@@ -37,7 +37,7 @@
     <collapsible-body class="white estirar-al-contenido sin-sombra" [expanded]="true">
       <div class="col s12 filtros">
           <label class="black-text valign-wrapper">
-          <input type="checkbox"/>
+          <input type="checkbox" [checked]="todasEstrellas" (change)="marcarTodos()"/>
         <span>
           <b>Todas las estrellas</b>
         </span>
@@ -45,32 +45,32 @@
       </div>
       <div class="col s12 filtros">
         <label>
-        <input type="checkbox"/>
-        <star-meter  [cantidadEstrellas]=5></star-meter>
+        <input type="checkbox" [checked]="cincoEstrellas" (change)="cincoEstrellas = !cincoEstrellas; buscar()" />
+        <app-star-meter [cantidadEstrellas]=5></app-star-meter>
       </label>
       </div>
       <div class="col s12 filtros">
         <label>
-        <input type="checkbox"/>
-        <star-meter  [cantidadEstrellas]=4></star-meter>
+        <input type="checkbox" [checked]="cuatroEstrellas" (change)="cuatroEstrellas = !cuatroEstrellas; buscar()"/>
+        <app-star-meter  [cantidadEstrellas]=4></app-star-meter>
       </label>
       </div>
       <div class="col s12 filtros">
         <label>
-        <input type="checkbox"/>
-        <star-meter  [cantidadEstrellas]=3></star-meter>
+        <input type="checkbox" [checked]="tresEstrellas" (change)="tresEstrellas = !tresEstrellas; buscar()"/>
+        <app-star-meter  [cantidadEstrellas]=3></app-star-meter>
       </label>
       </div>
       <div class="col s12 filtros">
         <label>
-        <input type="checkbox"/>
-        <star-meter  [cantidadEstrellas]=2></star-meter>
+        <input type="checkbox" [checked]="dosEstrellas" (change)="dosEstrellas = !dosEstrellas; buscar()"/>
+        <app-star-meter  [cantidadEstrellas]=2></app-star-meter>
       </label>
       </div>
       <div class="col s12 filtros">
         <label>
-        <input type="checkbox"/>
-        <star-meter  [cantidadEstrellas]=1></star-meter>
+        <input type="checkbox" [checked]="unaEstrella" (change)="unaEstrella = !unaEstrella; buscar()"/>
+        <app-star-meter  [cantidadEstrellas]=1></app-star-meter>
       </label>
       </div>
     </collapsible-body>
