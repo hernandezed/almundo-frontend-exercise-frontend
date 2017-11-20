@@ -11,6 +11,8 @@ export class CajaFiltrosComponent {
   private hotelService: HotelService;
   public listaContraidaMobile: boolean;
 
+  public abrirFiltrosMobile: boolean;
+
   @Input() nombreBuscado: string;
 
   @Input() todasLasEstrellas: boolean;
@@ -25,6 +27,11 @@ export class CajaFiltrosComponent {
   hotelesFiltrados = new EventEmitter();
 
   constructor(hotelService: HotelService) {
+    this.abrirFiltrosMobile = false;
+
+
+
+
     this.abiertoFiltroNombre = true;
     this.abiertoFiltroEstrella = true;
     this.hotelService = hotelService;
@@ -37,6 +44,11 @@ export class CajaFiltrosComponent {
     this.dosEstrellas = false;
     this.unaEstrella = false;
   }
+
+  public toggleAbrirFiltrosMobile() {
+    this.abrirFiltrosMobile = !this.abrirFiltrosMobile;
+  }
+
 
   public toggleAbiertoFiltroNombre() {
     this.abiertoFiltroNombre = !this.abiertoFiltroNombre;

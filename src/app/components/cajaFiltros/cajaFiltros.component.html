@@ -1,83 +1,78 @@
-<collapsible-list [type]="'expandable'">
-  <collapsible-list-item class="filtros">
-    <collapsible-header class="separar-seccion sin-bordes disabled">
+<ul class="collapsible collapsible-accordion sin-bordes" data-collapsible="accordion">
+  <li class="active">
+    <div class="collapsible-header hide-on-med-and-down sin-bordes">
       <b>Filtros</b>
-    </collapsible-header>
-    <collapsible-body class="white sin-bordes-internos sin-sombra sin-bordes" [expanded]="true">
-      <div class="separador">
+    </div>
+    <div class="separador hide-on-med-and-down"></div>
+    <div class="collapsible-header hide-on-large-only centrar-header center" (click)="toggleAbrirFiltrosMobile()">
+      <a><b>Filtrar</b></a>
+      <i class="caret rotate" [class.open]="abrirFiltrosMobile"></i>
+    </div>
+    <div class="collapsible-body mostrar-cuerpo-colapsable-l cuerpo-colapsable" [class.mostrar-cuerpo-colapsable]="abrirFiltrosMobile">
+      <div class="collapsible-header light-blue-text text-darken-1 sin-bordes" (click)="toggleAbiertoFiltroNombre()">
+        <svg-icon src="/assets/icons/filters/search.svg" class="icon-collapsible-header"></svg-icon>
+        <b>Nombre del Hotel</b>
+        <div class="right-align col s1 l2">
+          <i class="caret rotate" [class.open]="abiertoFiltroNombre"></i>
+        </div>
       </div>
-      <collapsible-list-item class="filtros">
-        <collapsible-header class="light-blue-text text-darken-1 header-filtro sin-bordes" (click)="toggleAbiertoFiltroNombre()">
-          <div class="col s11 l10">
-            <svg-icon src="/assets/icons/filters/search.svg" class="icon-collapsible-header"></svg-icon>
-            <b>Nombre del Hotel</b>
-          </div>
-          <div class="right-align col s1 l2">
-            <i class="caret rotate" [class.open]="abiertoFiltroNombre"></i>
-          </div>
-        </collapsible-header>
-        <collapsible-body class="white estirar sin-sombra" [expanded]="true">
-          <div class="col l6 m10 s6 xl7">
-            <input class="no-material" placeholder="Ingrese el nombre del hotel" [(ngModel)]="nombreBuscado" />
-          </div>
-          <div class="col l6 m2 s6 xl5">
-            <a class="btn indigo darken-4 no-mayusculas" (click)="buscar()">Aceptar</a>
-          </div>
-        </collapsible-body>
-      </collapsible-list-item>
-      <div class="separador">
+      <div class="row filtro collapsible-body cuerpo-colapsable" [class.mostrar-cuerpo-colapsable]="abiertoFiltroNombre">
+        <div class="col s8 m10 l8">
+          <input class="no-material" placeholder="Ingrese el nombre del hotel" [(ngModel)]="nombreBuscado" />
+        </div>
+        <div class="col s4 m2 l4">
+          <button class="btn indigo darken-4 no-mayusculas boton-centrado" (click)="buscar()">Aceptar</button>
+        </div>
       </div>
-      <collapsible-list-item class="filtros">
-        <collapsible-header class="light-blue-text text-darken-1 header-filtro sin-bordes" (click)="toggleAbiertoFiltroEstrella()">
-          <div class="col s11 l10">
-            <svg-icon src="/assets/icons/filters/star.svg" class="icon-collapsible-header"></svg-icon>
-            <b>Estrellas</b>
-          </div>
-          <div class="right-align col s1 l2">
-            <i class="caret rotate" [class.open]="abiertoFiltroEstrella"></i>
-          </div>
-        </collapsible-header>
-        <collapsible-body class="white estirar sin-sombra" [expanded]="true">
-          <div class="col s12 filtros">
-            <label class="black-text valign-wrapper">
-          <input type="checkbox" [checked]="todasEstrellas" (change)="marcarTodos()"/>
-        <span>
-          <b>Todas las estrellas</b>
-        </span>
+      <div class="separador"></div>
+      <div class="collapsible-header light-blue-text text-darken-1 sin-bordes" (click)="toggleAbiertoFiltroEstrella()">
+        <svg-icon src="/assets/icons/filters/star.svg" class="icon-collapsible-header"></svg-icon>
+        <b>Estrellas</b>
+        <div class="right-align col s1 l2">
+          <i class="caret rotate" [class.open]="abiertoFiltroEstrella"></i>
+        </div>
+      </div>
+      <div class="row filtro collapsible-body cuerpo-colapsable" [class.mostrar-cuerpo-colapsable]="abiertoFiltroEstrella">
+        <div class="col s12 filtros separar-estrellas">
+          <label class="black-text valign-wrapper">
+            <input type="checkbox" [checked]="todasEstrellas" (change)="marcarTodos()" class="filtro-checkbox"/>
+            <span>
+              <b>Todas las estrellas</b>
+            </span>
+          </label>
+        </div>
+      <div class="col s12 filtros separar-estrellas">
+        <label>
+          <input type="checkbox" [checked]="cincoEstrellas" (change)="cincoEstrellas = !cincoEstrellas; buscar()" class="filtro-checkbox"/>
+          <app-star-meter [cantidadEstrellas]=5></app-star-meter>
         </label>
-          </div>
-          <div class="col s12 filtros">
-            <label>
-        <input type="checkbox" [checked]="cincoEstrellas" (change)="cincoEstrellas = !cincoEstrellas; buscar()" />
-        <app-star-meter [cantidadEstrellas]=5></app-star-meter>
-      </label>
-          </div>
-          <div class="col s12 filtros">
-            <label>
-        <input type="checkbox" [checked]="cuatroEstrellas" (change)="cuatroEstrellas = !cuatroEstrellas; buscar()"/>
-        <app-star-meter  [cantidadEstrellas]=4></app-star-meter>
-      </label>
-          </div>
-          <div class="col s12 filtros">
-            <label>
-        <input type="checkbox" [checked]="tresEstrellas" (change)="tresEstrellas = !tresEstrellas; buscar()"/>
-        <app-star-meter  [cantidadEstrellas]=3></app-star-meter>
-      </label>
-          </div>
-          <div class="col s12 filtros">
-            <label>
-        <input type="checkbox" [checked]="dosEstrellas" (change)="dosEstrellas = !dosEstrellas; buscar()"/>
-        <app-star-meter  [cantidadEstrellas]=2></app-star-meter>
-      </label>
-          </div>
-          <div class="col s12 filtros">
-            <label>
-        <input type="checkbox" [checked]="unaEstrella" (change)="unaEstrella = !unaEstrella; buscar()"/>
-        <app-star-meter  [cantidadEstrellas]=1></app-star-meter>
-      </label>
-          </div>
-        </collapsible-body>
-      </collapsible-list-item>
-    </collapsible-body>
-  </collapsible-list-item>
-</collapsible-list>
+      </div>
+      <div class="col s12 filtros separar-estrellas">
+        <label>
+          <input type="checkbox" [checked]="cuatroEstrellas" (change)="cuatroEstrellas = !cuatroEstrellas; buscar()" class="filtro-checkbox"/>
+          <app-star-meter  [cantidadEstrellas]=4></app-star-meter>
+        </label>
+      </div>
+      <div class="col s12 filtros separar-estrellas">
+        <label>
+          <input type="checkbox" [checked]="tresEstrellas" (change)="tresEstrellas = !tresEstrellas; buscar()" class="filtro-checkbox"/>
+          <app-star-meter  [cantidadEstrellas]=3></app-star-meter>
+        </label>
+      </div>
+      <div class="col s12 filtros separar-estrellas">
+        <label>
+          <input type="checkbox" [checked]="dosEstrellas" (change)="dosEstrellas = !dosEstrellas; buscar()" class="filtro-checkbox"/>
+          <app-star-meter  [cantidadEstrellas]=2></app-star-meter>
+        </label>
+      </div>
+      <div class="col s12 filtros separar-estrellas">
+        <label>
+          <input type="checkbox" [checked]="unaEstrella" (change)="unaEstrella = !unaEstrella; buscar()" class="filtro-checkbox"/>
+          <app-star-meter  [cantidadEstrellas]=1></app-star-meter>
+        </label>
+      </div>
+    </div>
+    </div>
+  </li>
+
+</ul>

@@ -24,10 +24,10 @@ export class HotelService {
     let filtroEstrellas = 'estrellas=';
     let filtros= '';
     if(nombre!='') {
-      filtros = filtros.concat(filtroNombre).concat(nombre).concat("&");
+      filtros = filtros.concat(filtroNombre).concat(nombre);
     }
     estrellas.forEach(estrella => {
-      filtros = filtros.concat(filtroEstrellas).concat(estrella);
+      filtros = filtros.concat("&").concat(filtroEstrellas).concat(estrella);
     });
     return filtros;
   }
