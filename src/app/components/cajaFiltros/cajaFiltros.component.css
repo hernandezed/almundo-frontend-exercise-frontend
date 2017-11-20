@@ -2,8 +2,9 @@
   margin-bottom: 10px;
 }
 
-.separar-seccion {
-  margin-bottom: 5px;
+.separador {
+  padding-bottom: 5px;
+  background: #f4f4f4;
 }
 
 .icon-collapsible-header {
@@ -11,9 +12,17 @@
   fill: #039be5;
 }
 
-.estirar-al-contenido{
+.estirar{
   border:0px;
   padding: 10px;
+}
+
+.sin-bordes-internos {
+  padding: 0px;
+}
+
+.sin-bordes {
+  border: 0px
 }
 
 .sin-sombra {
@@ -45,4 +54,18 @@
 .caret.rotate.open {
   transform: rotate(-180deg);
   border-width: 7px 7px 0 7px;
+}
+
+.header-filtro {
+  padding-left: 0px;
+}
+@media (max-width: 992px) {
+  .lista-contraida-mobile {
+    height: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-bottom: none;
+    box-shadow: none;
+    overflow: hidden;
+  }
 }

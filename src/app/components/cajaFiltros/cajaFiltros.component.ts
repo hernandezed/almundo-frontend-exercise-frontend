@@ -9,6 +9,8 @@ export class CajaFiltrosComponent {
   public abiertoFiltroNombre: boolean;
   public abiertoFiltroEstrella: boolean;
   private hotelService: HotelService;
+  public listaContraidaMobile: boolean;
+
   @Input() nombreBuscado: string;
 
   @Input() todasLasEstrellas: boolean;
