@@ -9,8 +9,6 @@ import { CajaPrecioComponent } from '../cajaPrecio/cajaPrecio.component';
 import { CajaFiltrosComponent } from '../cajaFiltros/cajaFiltros.component';
 import { HotelService } from '../../services/hotel.service';
 import { AngularSvgIconModule } from 'angular-svg-icon';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CollapsibleModule } from 'angular2-collapsible';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -26,8 +24,6 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     HttpClientModule,
     AngularSvgIconModule,
-    BrowserAnimationsModule,
-    CollapsibleModule,
     FormsModule
   ],
   providers: [

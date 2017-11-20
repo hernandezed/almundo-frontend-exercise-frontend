@@ -59,26 +59,26 @@ export class CajaFiltrosComponent {
   }
 
   private armarFiltrosDeEstrellas(): Set<number> {
-    let estrellas = new Set();
-    if(this.cincoEstrellas) {
+    const estrellas = new Set();
+    if (this.cincoEstrellas) {
       estrellas.add(5);
     }
-    if(this.cuatroEstrellas) {
+    if (this.cuatroEstrellas) {
       estrellas.add(4);
     }
-    if(this.tresEstrellas) {
+    if (this.tresEstrellas) {
       estrellas.add(3);
     }
-    if(this.dosEstrellas) {
+    if (this.dosEstrellas) {
       estrellas.add(2);
     }
-    if(this.unaEstrella) {
+    if (this.unaEstrella) {
       estrellas.add(1);
     }
     return estrellas;
   }
 
-  private marcarTodos() {
+  public marcarTodos() {
     this.todasLasEstrellas = !this.todasLasEstrellas;
     this.cincoEstrellas = this.todasLasEstrellas;
     this.cuatroEstrellas = this.todasLasEstrellas;
@@ -88,7 +88,8 @@ export class CajaFiltrosComponent {
   }
 
   public buscar() {
-    this.hotelService.buscar(this.nombreBuscado, this.armarFiltrosDeEstrellas()).subscribe(hoteles => this.hotelesFiltrados.emit(hoteles.json()));
+    this.hotelService.buscar(this.nombreBuscado, this.armarFiltrosDeEstrellas())
+      .subscribe(hoteles => this.hotelesFiltrados.emit(hoteles.json()));
   }
 
 }

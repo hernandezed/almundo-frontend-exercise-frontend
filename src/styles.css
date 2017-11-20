@@ -28,3 +28,8 @@ input.no-material:not([type]):focus:not([readonly]){
 .no-mayusculas {
      text-transform: none;
 }
+
+.boton-centrado {
+  width: 100%;
+  padding: 0px;
+}

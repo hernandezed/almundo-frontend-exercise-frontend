@@ -15,6 +15,10 @@
   margin: 10px 15px;
 }
 
+.filtros label {
+  font-size: 1rem;
+}
+
 .filtro .separar-estrellas {
   padding: 0px;
 }
@@ -45,11 +49,6 @@
 .cuerpo-colapsable {
   padding: 0px;
   background: white;
-}
-
-.boton-centrado {
-  width: 100%;
-  padding: 0px;
 }
 
 .cuerpo-colapsable .filtro{

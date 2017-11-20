@@ -16,18 +16,18 @@ export class HotelService {
   }
 
   public buscar(nombre: string, estrellas: Set<number>) {
-    return this.http.get(this.baseUrl + '/hoteles?' + this.armarFiltros(nombre,estrellas));
+    return this.http.get(this.baseUrl + '/hoteles?' + this.armarFiltros(nombre, estrellas));
   }
 
-  private armarFiltros(nombre:string, estrellas: Set<number>) {
-    let filtroNombre = 'nombre=';
-    let filtroEstrellas = 'estrellas=';
-    let filtros= '';
-    if(nombre!='') {
+  private armarFiltros(nombre: string, estrellas: Set<number>) {
+    const filtroNombre = 'nombre=';
+    const filtroEstrellas = 'estrellas=';
+    let filtros = '';
+    if (nombre !== '') {
       filtros = filtros.concat(filtroNombre).concat(nombre);
     }
     estrellas.forEach(estrella => {
-      filtros = filtros.concat("&").concat(filtroEstrellas).concat(estrella);
+      filtros = filtros.concat('&').concat(filtroEstrellas).concat(estrella.toString());
     });
     return filtros;
   }
