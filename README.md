@@ -31,4 +31,4 @@ npm start
 npm run start-prod
 ```
 
-La aplicacion en ambos casos quedara levantada en http://localhost:4200
+La aplicacion en ambos casos quedara levantada en http://localhost:4200. La aplicación es full-responsive (en algunas resoluciones se vera mejor por la resolucion de las imagenes)
