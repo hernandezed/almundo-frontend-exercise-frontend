@@ -1,18 +1,18 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { HotelService } from '../../services/hotel.service';
+
 @Component({
   selector: 'app-caja-filtros',
   templateUrl: './cajaFiltros.component.html',
   styleUrls: ['./cajaFiltros.component.css']
 })
 export class CajaFiltrosComponent {
+  private hotelService: HotelService;
+
   public abiertoFiltroNombre: boolean;
   public abiertoFiltroEstrella: boolean;
-  private hotelService: HotelService;
   public listaContraidaMobile: boolean;
-
   public abrirFiltrosMobile: boolean;
-
   @Input() nombreBuscado: string;
 
   @Input() todasLasEstrellas: boolean;
@@ -28,10 +28,6 @@ export class CajaFiltrosComponent {
 
   constructor(hotelService: HotelService) {
     this.abrirFiltrosMobile = false;
-
-
-
-
     this.abiertoFiltroNombre = true;
     this.abiertoFiltroEstrella = true;
     this.hotelService = hotelService;
@@ -48,7 +44,6 @@ export class CajaFiltrosComponent {
   public toggleAbrirFiltrosMobile() {
     this.abrirFiltrosMobile = !this.abrirFiltrosMobile;
   }
-
 
   public toggleAbiertoFiltroNombre() {
     this.abiertoFiltroNombre = !this.abiertoFiltroNombre;

@@ -2,21 +2,23 @@ import { Injectable } from '@angular/core';
 import { Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Observable } from 'rxjs/Observable';
+import {environment} from '../../environments/environment';
 
 @Injectable()
 export class HotelService {
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = '';
 
   constructor(private http: Http) {
+    this.baseUrl = environment.serverBaseUrl + environment.apiUri;
   }
 
   public obtenerTodos() {
-    return this.http.get(this.baseUrl + '/hoteles')
+    return this.http.get(this.baseUrl)
     .map(res => res.json());
   }
 
   public buscar(nombre: string, estrellas: Set<number>) {
-    return this.http.get(this.baseUrl + '/hoteles?' + this.armarFiltros(nombre, estrellas));
+    return this.http.get(this.baseUrl + '?' + this.armarFiltros(nombre, estrellas));
   }
 
   private armarFiltros(nombre: string, estrellas: Set<number>) {
