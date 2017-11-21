@@ -39,6 +39,7 @@
   .wrapper-imagenes{
     overflow: hidden;
     height: 50vw;
+    margin-bottom: 10px;
   }
 }
 
