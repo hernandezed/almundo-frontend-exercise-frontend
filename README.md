@@ -14,7 +14,7 @@ Utilizar una grilla responsive o similar para el maquetado.
 Optimizar todos los recursos para entornos productivos, (minificar, ofuscar, etc).
 
 ### Tecnologías escogidas:
-Angular como framework orientado a componentes
+Angular como framework orientado a componentes.
 Materialize para la grilla responsive
 
 ## Instrucciones para iniciar la aplicación:
