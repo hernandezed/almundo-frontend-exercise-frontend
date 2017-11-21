@@ -13,6 +13,10 @@ Utilizar algún package manager (npm, bower) para manejar dependencias externas.
 Utilizar una grilla responsive o similar para el maquetado.
 Optimizar todos los recursos para entornos productivos, (minificar, ofuscar, etc).
 
+### Tecnologías escogidas:
+Angular como framework orientado a componentes
+Materialize para la grilla responsive
+
 ## Instrucciones para iniciar la aplicación:
 1. Ejecutar en la consola, ubicados en la raiz del proyecto
 ```
